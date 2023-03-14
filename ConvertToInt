@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+#include <stdexcept>
+
+void convert_to_int(std::string&);
+
+int main ()
+{
+    std::string str;
+    std::cout << "Enter a string" << std::endl;
+    std::cin >> str;
+    convert_to_int(str);
+
+    return 0;
+}
+
+void convert_to_int(std::string& str)
+{
+    int count = 0;
+    for (int i = 0; i < str.size(); ++i)
+    {
+        if (str[i] >= '1' && str[i] <= '9')
+        {
+            ++count;
+            std::cout << static_cast<int>(str[i]) - 48;
+        }
+        else
+        {
+            str.erase(str.begin() + i);
+        }
+    }
+
+    if (count == 0)
+    {
+        throw std::runtime_error("The conversion is not possible.");
+    }
+    
+}
