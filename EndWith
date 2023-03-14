@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+bool end_with(const std::string&, const std::string&);
+
+int main ()
+{
+    std::string str1 = " ";
+    std::string str2 = " ";
+    std::cout << "Enter the first line" << std::endl;
+    std::cin >> str1;
+    std::cout << "Enter the second line" << std::endl;
+    std::cin >> str2;
+    std::cout << std::boolalpha << end_with(str1, str2);
+
+    return 0;
+}
+
+bool end_with (const std::string& str1, const std::string& str2)
+{
+   if (str2.size() > str1.size() && str2.size() == 0)
+   {
+        return  false;
+   }
+   for (int i = str2.size() - 1, j = str1.size() - 1; i >= 0; --i, --j)
+   {
+        if (str1[j] != str2[i])
+        {
+            return false;
+        }
+        
+   }
+
+   return true;
+}
