@@ -1,0 +1,39 @@
+#include <iostream>
+#include <iostream>
+
+bool start_with(const std::string&, const std::string&);
+
+int main ()
+{
+    std::string str1 = " ";
+    std::string str2 = " ";
+    std::cout << "Enter the first line" << std::endl;
+    std::cin >> str1;
+    std::cout << "Enter the second line" << std::endl;
+    std::cin >> str2;
+    std::cout << std::boolalpha << start_with(str1, str2);
+    
+    return 0;
+}
+
+
+
+bool start_with (const std::string& str1, const std::string& str2)
+{
+    if (str2.size() > str1.size() && str2.size() == 0)
+    {
+        return false;
+    }
+
+    for (int i = 0; i < str2.size(); ++i)
+    {
+        if (str1[i] != str2[i])
+        {
+            return false;
+        }
+
+    }   
+
+    return true;
+}
+
