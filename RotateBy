@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+void rotate_by(std::string&, int, int);
+
+int main ()
+{
+    std::string str;
+    std::cout << "Enter the string" << std::endl;
+    std::cin >> str;
+    int start = 0;
+    int end = 0;
+    std::cout << "Write the beggining of the range" << std::endl;
+    std::cin >> start;
+    std::cout << "Write the end of the range" << std::endl;
+    std::cin >> end;
+    rotate_by(str, start, end);
+    return 0;
+}
+
+void rotate_by (std::string& str, int start, int end)
+{
+    for (start, end; start < end; ++start, --end)
+    {
+        char tmp = str[start];
+        str[start] = str[end];
+        str[end] = tmp;
+    }
+
+    std::cout << "Here is your inverted range: " <<  str << std::endl;
+}
