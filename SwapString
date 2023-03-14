@@ -1,0 +1,24 @@
+#include <iostream>
+#include <iostream>
+
+void swap(std::string&, std::string&);
+
+int main ()
+{
+    std::string str1 = " ";
+    std::string str2 = " ";
+    std::cout << "Enter the first word" << std::endl;
+    std::cin >> str1;
+    std::cout << "Enter the second word" << std::endl;
+    std::cin >> str2;
+    swap(str1, str2);
+    return 0;
+}
+
+void swap (std::string& str1, std::string& str2)
+{
+    std::string tmp = str1;
+    str1 = str2;
+    str2 = tmp;
+    std::cout << "Swap: " << str1 << '\t' << str2 << std::endl;
+}
